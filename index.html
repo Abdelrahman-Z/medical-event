@@ -25,9 +25,9 @@
         </section>
         
         <div class="buttons">
-            <button onclick="changeModel('https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?1542147958948')">Astronaut</button>
-            <button onclick="changeModel('https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fvf1a.glb?v=1541992543297')">Cube</button>
-            <button onclick="changeModel('https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Sphere.glb')">Sphere</button>
+            <button onclick="changeModel('https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?1542147958948', 'https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz?v=1569545377878')">Astronaut</button>
+            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/internal_combustion_engine_moto.glb?v=1729251933350', 'https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Cube.usdz')">Motor</button>
+            <button onclick="changeModel('https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Sphere.glb', 'https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Sphere.usdz')">Sphere</button>
         </div>
     </div>
     
@@ -38,10 +38,10 @@
             src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
     </script>
     <script>
-        function changeModel(modelUrl) {
+        function changeModel(modelUrl, iosUrl) {
             const modelViewer = document.getElementById('modelViewer');
             modelViewer.src = modelUrl;
-            
+            modelViewer.setAttribute('ios-src', iosUrl);
         }
     </script>
 </body>
