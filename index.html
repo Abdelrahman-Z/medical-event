@@ -13,7 +13,7 @@
     <div id="card">
         <model-viewer id="modelViewer"
                       src="https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729585335726"
-                      ios-src=""
+                      ios-src="https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729585357181"
                       poster=""
                       alt="A 3D model of an astronaut"
                       shadow-intensity="1"
@@ -28,7 +28,7 @@
             <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729585335726', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729585357181')">Engine</button>
             <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v.glb?v=1729585382607', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v_05.usdz?v=1729588209619')">Engine-V</button>
             <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.glb?v=1729585597099', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.usdz?v=1729585913628')">Gear</button>
-            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine.glb?v=1729586223656', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine2.usdz?v=1729589614675')">Turbine</button>
+            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine.glb?v=1729586223656', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine3.usdz?v=1729590871145')">Turbine</button>
         </div>
     </div>
     
@@ -42,6 +42,7 @@
         function changeModel(modelUrl, iosUrl) {
             const modelViewer = document.getElementById('modelViewer');
             modelViewer.src = modelUrl;
+           // modelViewer.ios=iosUrl;
             modelViewer.setAttribute('ios-src', iosUrl);
         }
     </script>
