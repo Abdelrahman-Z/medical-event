@@ -1,9 +1,60 @@
+this is html file <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>&lt;model-viewer&gt; example with buttons</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="demo-styles.css">
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+</head>
+<body>
+    <div id="card">
+        <model-viewer id="modelViewer"
+                      src="https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729502032723"
+                      ios-src="https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729502402237"
+                      poster=""
+                      alt="A 3D model of an astronaut"
+                      shadow-intensity="1"
+                      camera-controls
+                      auto-rotate ar>
+        </model-viewer>
+        <section class="attribution">
+            <h1>AR</h1>
+        </section>
+        
+        <div class="buttons">
+            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729502032723', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729502402237')">Engine</button>
+            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v.glb?v=1729502828774', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v.usdz?v=1729502982762')">Engine-V</button>
+            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.glb?v=1729503303268', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.usdz?v=1729503516314')">Gear</button>
+          <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine.glb?v=1729503848125', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine.usdz?v=1729504841759')">Turbine</button>
+        </div>
+    </div>
+    
+    <footer>
+    </footer>
+
+    <script type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
+    <script>
+        function changeModel(modelUrl, iosUrl) {
+            const modelViewer = document.getElementById('modelViewer');
+            modelViewer.src = modelUrl;
+            modelViewer.setAttribute('ios-src', iosUrl);
+        }
+    </script>
+</body>
+</html>
+
 body {
   margin: 1em;
   padding: 0;
   font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
   color: #244376;
 }
+
 
 #card {
   margin: 3em auto;
@@ -51,25 +102,4 @@ footer {
   text-align: center;
   font-style: italic;
   line-height: 1.5em;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  margin: 1em;
-}
-
-.buttons button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #244376;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.buttons button:hover {
-  background-color: #1a3357;
 }
