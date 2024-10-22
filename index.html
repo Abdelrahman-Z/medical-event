@@ -25,10 +25,10 @@
         </section>
         
         <div class="buttons">
-            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729585335726', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729585357181')">Engine</button>
-            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v.glb?v=1729585382607', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v_05.usdz?v=1729588209619')">Engine-V</button>
-            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.glb?v=1729585597099', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.usdz?v=1729585913628')">Gear</button>
-            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine.glb?v=1729586223656', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine3.usdz?v=1729590871145')">Turbine</button>
+            <button onclick="changeModel_0('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729585335726', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729585357181')">Engine</button>
+            <button onclick="changeModel_1('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v.glb?v=1729585382607', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v_05.usdz?v=1729588209619')">Engine-V</button>
+            <button onclick="changeModel_2('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.glb?v=1729585597099', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.usdz?v=1729585913628')">Gear</button>
+            <button onclick="changeModel_3('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine.glb?v=1729586223656', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine3.usdz?v=1729590871145')">Turbine</button>
         </div>
     </div>
     
@@ -39,7 +39,25 @@
             src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
     </script>
     <script>
-        function changeModel(modelUrl, iosUrl) {
+        function changeModel_0(modelUrl, iosUrl) {
+            const modelViewer = document.getElementById('modelViewer');
+            modelViewer.src = modelUrl;
+           // modelViewer.ios=iosUrl;
+            modelViewer.setAttribute('ios-src', iosUrl);
+        }
+      function changeModel_1(modelUrl, iosUrl) {
+            const modelViewer = document.getElementById('modelViewer');
+            modelViewer.src = modelUrl;
+           // modelViewer.ios=iosUrl;
+            modelViewer.setAttribute('ios-src', iosUrl);
+        }
+      function changeModel_2(modelUrl, iosUrl) {
+            const modelViewer = document.getElementById('modelViewer');
+            modelViewer.src = modelUrl;
+           // modelViewer.ios=iosUrl;
+            modelViewer.setAttribute('ios-src', iosUrl);
+        }
+      function changeModel_3(modelUrl, iosUrl) {
             const modelViewer = document.getElementById('modelViewer');
             modelViewer.src = modelUrl;
            // modelViewer.ios=iosUrl;
