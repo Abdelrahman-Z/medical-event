@@ -1,105 +1,103 @@
-this is html file <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>&lt;model-viewer&gt; example with buttons</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="demo-styles.css">
-    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-</head>
-<body>
-    <div id="card">
-        <model-viewer id="modelViewer"
-                      src="https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729502032723"
-                      ios-src="https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729502402237"
-                      poster=""
-                      alt="A 3D model of an astronaut"
-                      shadow-intensity="1"
-                      camera-controls
-                      auto-rotate ar>
-        </model-viewer>
-        <section class="attribution">
-            
-        </section>
-        
-        <div class="buttons">
-            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729502032723', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729502402237')">Engine</button>
-            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v.glb?v=1729502828774', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v.usdz?v=1729502982762')">Engine-V</button>
-            <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.glb?v=1729503303268', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.usdz?v=1729503516314')">Gear</button>
-          <button onclick="changeModel('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine.glb?v=1729503848125', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine.usdz?v=1729504841759')">Turbine</button>
-        </div>
-    </div>
-    
-    <footer>
-    </footer>
-
-    <script type="module"
-            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-    </script>
-    <script>
-        function changeModel(modelUrl, iosUrl) {
-            const modelViewer = document.getElementById('modelViewer');
-            modelViewer.src = modelUrl;
-            modelViewer.setAttribute('ios-src', iosUrl);
-        }
-    </script>
-</body>
-</html>
-
 body {
-  margin: 1em;
+  margin: 0;
   padding: 0;
-  font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
-  color: #244376;
+  font-family: "Google Sans", "Noto", "Roboto", "Helvetica Neue", sans-serif;
+  color: #e0e0e0;
+  height: 100vh;
 }
 
+.h1 {
+  margin: 0;
+  padding: 1em 0;
+  font-size: 3em;
+  text-align: center;
+  color: #f39c12;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeInDown 1s ease-out;
+}
 
 #card {
-  margin: 3em auto;
+  margin: 2em auto;
   display: flex;
   flex-direction: column;
-  max-width: 600px;
-  border-radius: 6px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  background: linear-gradient(135deg, #3a506b, #1c2541);
+  animation: slideUp 1.2s ease-out;
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 768px) {
+  #card {
+    margin: 2em 20px; /* Adds 20px margin on left and right */
+  }
 }
 
 model-viewer {
   width: 100%;
-  height: 400px;
-  background-color: #70BCD1;
+  height: 500px;
+  background-color: #5dade2;
+  border-radius: 15px 15px 0 0;
+  border-bottom: 2px solid #f0f0f0;
   --poster-color: #ffffff00;
 }
 
-.attribution {
+.button-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1em;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #22303c;
+  border-radius: 0 0 15px 15px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.attribution h1 {
-  margin: 0 0 0.25em;
+.button {
+  background-color: #f39c12;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  width: 120px;
 }
 
-.attribution img {
-  opacity: 0.5;
-  height: 2em;
+.button:hover {
+  background-color: #e67e22;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
 }
 
-.attribution .cc {
-  flex-shrink: 0;
-  text-decoration: none;
+.button:active {
+  background-color: #d35400;
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: auto;
-  text-align: center;
-  font-style: italic;
-  line-height: 1.5em;
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

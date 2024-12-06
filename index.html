@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>&lt;model-viewer&gt; example with buttons</title>
+    <title>Model Viewer</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="demo-styles.css">
+    <link rel="stylesheet" href="/demo-styles.css">
     <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
 </head>
 <body>
+    <h1 class="h1">Model Viewer</h1>
     <div id="card">
         <model-viewer id="modelViewer"
-                      src="https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729585335726"
-                      ios-src="https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729585357181"
+                      src="/assets/Microscope.glb"
+                      ios-src="/assets/microscope.usdz"
                       poster=""
-                      alt="A 3D model of an astronaut"
+                      alt="A 3D model of an object"
                       shadow-intensity="1"
                       camera-controls
                       auto-rotate ar>
         </model-viewer>
-        <section class="attribution">
-            <h1>AR</h1>
-        </section>
         
-        <div class="buttons">
-            <button onclick="changeModel_0('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.glb?v=1729585335726', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine.usdz?v=1729585357181')">Engine</button>
-            <button onclick="changeModel_1('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v.glb?v=1729585382607', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/engine%20v_05.usdz?v=1729588209619')">Engine-V</button>
-            <button onclick="changeModel_2('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.glb?v=1729585597099', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/gear.usdz?v=1729585913628')">Gear</button>
-            <button onclick="changeModel_3('https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine.glb?v=1729586223656', 'https://cdn.glitch.me/ed202251-d62f-448b-af27-25892b1d15ad/turbine2.usdz?v=1729589614675')">Turbine</button>
+        <div class="button-container">
+            <button class="button" onclick="changeModel_0('/assets/Microscope.glb' ,'/assets/microscope.usdz' )">Microscope</button>
+            <button class="button" onclick="changeModel_1('/assets/cannula.glb' , '/assets/cannula.usdz')">Cannula</button>
+            <button class="button" onclick="changeModel_2('/assets/monjarou.glb' , '/assets/monjarou.usdz')">Monjarou</button>
+            <button class="button" onclick="changeModel_3('/assets/Sringe.glb' , '/assets/syringe.usdz')">Sringe</button>
         </div>
     </div>
     
-    <footer>
-    </footer>
+    <footer></footer>
 
     <script type="module"
             src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
@@ -42,25 +38,24 @@
         function changeModel_0(modelUrl, iosUrl) {
             const modelViewer = document.getElementById('modelViewer');
             modelViewer.src = modelUrl;
-           // modelViewer.ios=iosUrl;
             modelViewer.setAttribute('ios-src', iosUrl);
         }
-      function changeModel_1(modelUrl, iosUrl) {
+        
+        function changeModel_1(modelUrl, iosUrl) {
             const modelViewer = document.getElementById('modelViewer');
             modelViewer.src = modelUrl;
-           // modelViewer.ios=iosUrl;
             modelViewer.setAttribute('ios-src', iosUrl);
         }
-      function changeModel_2(modelUrl, iosUrl) {
+
+        function changeModel_2(modelUrl, iosUrl) {
             const modelViewer = document.getElementById('modelViewer');
             modelViewer.src = modelUrl;
-           // modelViewer.ios=iosUrl;
             modelViewer.setAttribute('ios-src', iosUrl);
         }
-      function changeModel_3(modelUrl, iosUrl) {
+
+        function changeModel_3(modelUrl, iosUrl) {
             const modelViewer = document.getElementById('modelViewer');
             modelViewer.src = modelUrl;
-           // modelViewer.ios=iosUrl;
             modelViewer.setAttribute('ios-src', iosUrl);
         }
     </script>
